@@ -1,0 +1,33 @@
+.promo {
+  padding: 184px 0 224px 0;
+  background: url('../../img/fonImg.png') no-repeat center;
+  background-color: rgb(70, 93, 255);
+}
+.promo__title {
+  margin: 0 auto;
+  max-width: 730px;
+  height: 116px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .promo {
+    padding: 326px 0 342px 0;
+  }
+}
+@media (max-width: 580px) {
+  .promo {
+    padding: 207px 10px 246px;
+  }
+  .promo__title {
+    font-size: 31px;
+    line-height: 39px;
+  }
+}

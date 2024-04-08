@@ -1,0 +1,25 @@
+.navTab {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+  gap: 40px;
+}
+.navTab__link {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: rgb(0, 0, 0);
+}
+@media (max-width: 420px) {
+  .navTab {
+    padding: 25px 53px;
+    gap: 24px;
+  }
+  .navTab__link {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}

@@ -1,0 +1,39 @@
+import Header from '../Header/Header.jsx';
+import {Link} from 'react-router-dom';
+function Profile({onMobileMenu, isOpen, isLoggin}) {
+  const colorHeader = 'white';
+  return (
+    <>
+      <Header color={colorHeader} onMobileMenu={onMobileMenu} isOpen={isOpen} isLoggin={isLoggin} />
+      <section className='profile'>
+        <h1 className='profile__message'>Привет, Виталий!</h1>
+
+        <div className='profile__form'>
+          <form className='profile__form-container'>
+            <div className='profile__field'>
+              <label htmlFor='email' className='profile__label'>
+                E-mail
+              </label>
+              <input id='email' placeholder='pochta@yandex.ru' type='email' className='profile__input' />
+            </div>
+            <div className='profile__field'>
+              <label htmlFor='password' className='profile__label'>
+                Пароль
+              </label>
+              <input id='hidenPassword' placeholder='****' type='password' className='profile__input' />
+            </div>
+            {/* <button className='btn profile__submit'>Зарегистрироваться</button> */}
+          </form>
+          <div className='profile__links'>
+            <p className='profile__edit-link'>Редактировать</p>
+            <Link to='/' className='profile__signout-link'>
+              Выйти из аккаунта
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default Profile;

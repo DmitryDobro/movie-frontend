@@ -1,0 +1,54 @@
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.notFound__text {
+  margin: 0 auto;
+  text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.notFound__title {
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 169px;
+  letter-spacing: 0%;
+  margin: 0;
+}
+.notFound__subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+}
+.notFound__link {
+  color: rgb(255, 104, 56);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-decoration: none;
+  margin: 0 0 60px;
+}
+@media (max-width: 768px) {
+  .notFound__link {
+    margin: 0 0 222px;
+  }
+}
+@media (max-width: 320px) {
+  .notFound__title {
+    font-size: 80px;
+    line-height: 97px;
+  }
+  .notFound__subtitle {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .notFound__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
