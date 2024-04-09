@@ -13,7 +13,7 @@ function MobileMenu(props) {
           Сохраненные фильмы
         </NavLink>
       </div>
-      <NavLink className='btn mobile-menu__profile-btn' to='/profile'>Аккаунт</NavLink>
+      <NavLink className='mobile-menu__profile-link' to='/profile'>Аккаунт</NavLink>
     </section>
   );
 }

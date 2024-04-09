@@ -1,5 +1,5 @@
 .search-form {
-  padding: 60px 70px 80px;
+  padding: 60px 70px 70px;
   background: #ffffff;
   position: relative;
 }
@@ -13,13 +13,6 @@
   bottom: 0;
 }
 .search-form__container {
-  /* height: 46px;
-  padding: 6px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 40px;
-  background-color: rgb(155, 17, 17); */
 }
 .search-form__input-container {
   margin: 0 0 40px;
@@ -27,6 +20,7 @@
   padding: 6px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   border-radius: 40px;
   background-color: rgb(249, 249, 249);
 }
@@ -37,12 +31,18 @@
   gap: 12px;
 }
 .search-form__input {
-  width: 100%;
-  font: 400 18px Inter, Arial, sans-serif;
+  flex: 1 1 auto;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 17px;
   background-color: rgb(249, 249, 249);
   border-radius: 40px;
   padding: 6px;
 }
+
+/* .search-form__input:focus{
+  outline: none;
+} */
 
 .search-form__btn {
   display: flex;
@@ -52,6 +52,7 @@
   border-radius: 48px;
   width: 80px;
   height: 34px;
+  cursor: pointer;
 }
 
 .search-form__icon {
@@ -71,41 +72,16 @@
   flex: 0 0 auto;
 }
 
-.search-form__checkbox-icon {
-  box-sizing: border-box;
-  display: block;
-  width: 34px;
-  max-width: initial;
-  height: 15px;
-}
-
-.search-form__label {
-  flex: 0 0 auto;
-  margin-left: 13px;
-  font: 400 12px Inter, Arial, sans-serif;
-  color: rgba(255, 255, 255, 1);
-  white-space: pre-wrap;
-}
-
-.search-form-line {
-  box-sizing: border-box;
-  flex: 0 0 auto;
-  width: 1140px;
-  height: 1px;
-  margin: 40px 70px 10px;
-  background: #e8e8e8;
-}
 .search-form__label-tumb {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
   letter-spacing: 0%;
 }
-@media (max-width: 740px) {
-  .search-form__input {
-    width: 912px;
+@media (max-width: 768px) {
+  .search-form {
+    padding: 80px 30px 50px;
   }
-
   .search-form__container {
     margin-bottom: 73px;
   }
@@ -113,12 +89,9 @@
 
 @media (max-width: 540px) {
   .search-form {
-    padding: 0 14px 50px;
+    padding: 80px 14px 50px;
   }
-
-  .search-form__input {
-    font: 400 14px Inter, Arial, sans-serif;
-    padding: 1px 2px 0px 19px;
-    width: 100%;
+  .search-form__container {
+    margin-bottom: 43px;
   }
 }

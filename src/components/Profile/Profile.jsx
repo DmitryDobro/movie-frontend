@@ -10,19 +10,18 @@ function Profile({onMobileMenu, isOpen, isLoggin}) {
 
         <div className='profile__form'>
           <form className='profile__form-container'>
+          <div className='profile__field'>
+              <label htmlFor='password' className='profile__label'>
+                Имя
+              </label>
+              <input id='hidenPassword' placeholder='Виталий' type='text' className='profile__input' required/>
+            </div>
             <div className='profile__field'>
               <label htmlFor='email' className='profile__label'>
                 E-mail
               </label>
-              <input id='email' placeholder='pochta@yandex.ru' type='email' className='profile__input' />
+              <input id='email' placeholder='pochta@yandex.ru' type='email' className='profile__input' required/>
             </div>
-            <div className='profile__field'>
-              <label htmlFor='password' className='profile__label'>
-                Пароль
-              </label>
-              <input id='hidenPassword' placeholder='****' type='password' className='profile__input' />
-            </div>
-            {/* <button className='btn profile__submit'>Зарегистрироваться</button> */}
           </form>
           <div className='profile__links'>
             <p className='profile__edit-link'>Редактировать</p>

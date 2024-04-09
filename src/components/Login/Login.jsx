@@ -7,19 +7,19 @@ function Login() {
         <img src={logo} className='login__logo' alt='Лого' />
       </Link>
       <h1 className='login__message'>Рады видеть!</h1>
-      <div className='login__form'>
+      <form className='login__form'>
         <div className='login__form-container'>
           <div className='login__field'>
             <label htmlFor='email' className='login__label'>
               E-mail
             </label>
-            <input id='email' placeholder='pochta@yandex.ru' type='email' className='login__input' />
+            <input id='email' placeholder='pochta@yandex.ru' type='email' className='login__input' required/>
           </div>
           <div className='login__field'>
             <label htmlFor='password' className='login__label'>
               Пароль
             </label>
-            <input id='hidenPassword' placeholder='****' type='password' className='login__input' />
+            <input id='hidenPassword' placeholder='****' type='password' className='login__input' required/>
           </div>
           <button className='btn login__submit'>Войти</button>
         </div>
@@ -29,7 +29,7 @@ function Login() {
             Регистрация
           </Link>
         </div>
-      </div>
+      </form>
     </section>
   );
 }

@@ -7,7 +7,6 @@
   font-size: 22px;
   font-weight: 400;
   line-height: 27px;
-  letter-spacing: -4%;
   position: relative;
 }
 .aboutStudent__title::before {
@@ -22,6 +21,7 @@
   margin: 0 0 100px;
   display: flex;
   justify-content: space-between;
+  gap: 0 40px;
 }
 .aboutStudent__text {
 }
@@ -56,10 +56,7 @@
   letter-spacing: 0%;
   text-decoration: none;
 }
-.aboutStudent__photo {
-}
-.aboutStudent__portfolio {
-}
+
 .aboutStudent__portfolio-subtitle {
   margin: 0 0 50px;
   color: rgb(160, 160, 160);
@@ -74,22 +71,19 @@
   align-items: center;
   position: relative;
   margin-bottom: 20px;
-}
-.aboutStudent__portfolio-site:last-child {
-  margin-bottom: 0;
-}
-.aboutStudent__portfolio-link {
-  flex: 1 1 auto;
+  text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 30px;
   font-weight: 400;
   line-height: 50px;
-  letter-spacing: -4%;
   padding: 0 0 19px;
-  text-decoration: none;
-  position: relative;
 }
-.aboutStudent__portfolio-link::before {
+.aboutStudent__portfolio-site:last-child {
+  margin-bottom: 0;
+}
+.aboutStudent__portfolio-link-name {
+}
+.aboutStudent__portfolio-link-name::before {
   content: '';
   position: absolute;
   background-color: rgb(232, 232, 232);
@@ -100,12 +94,11 @@
 .aboutStudent__portfolio-icon {
   position: absolute;
   right: 0;
+  width: 18px;
+  height: 28px;
 }
 
 @media (max-width: 770px) {
-  .aboutStudent__info {
-    margin: 0 49px 100px 0;
-  }
   .aboutStudent {
     padding: 90px 50px;
   }
@@ -133,18 +126,31 @@
 }
 @media (max-width: 710px) {
   .aboutStudent__info {
-    margin: 0 0px 70px 0;
-  }
-  .aboutStudent__info {
     margin: 0 0 100px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
   }
+  .aboutStudent__name {
+    text-align: center;
+  }
+  .aboutStudent__job {
+    text-align: center;
+  }
+  .aboutStudent__photo {
+    margin: 0 0 40px;
+    height: 352px;
+    max-width: 292px;
+  }
 }
-
-@media (max-width: 410px) {
+@media (max-width: 560px) {
+  .aboutStudent__portfolio-site {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 430px) {
   .aboutStudent {
     padding: 70px 14px;
   }
@@ -154,11 +160,7 @@
     font-size: 18px;
     line-height: 22px;
   }
-  .aboutStudent__photo {
-    margin: 0 0 40px;
-    height: 352px;
-    max-width: 292px;
-  }
+
   .aboutStudent__name {
     margin: 0 0 20px;
     font-size: 30px;
@@ -184,8 +186,8 @@
     font-size: 14px;
     line-height: 20px;
   }
-  .aboutStudent__portfolio-link {
-    font-size: 18px;
+  .aboutStudent__portfolio-site {
+    font-size: 14px;
     line-height: 28px;
   }
 }

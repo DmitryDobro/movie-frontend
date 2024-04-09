@@ -9,8 +9,9 @@
 }
 .movie-card__image {
   max-width: 100%;
-  height: 100%;
+  height: 151px;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 .movie-card__content {
   flex: 1 1 auto;
@@ -60,14 +61,28 @@
   border-radius: 50%;
   margin: 0px 0px 0px 1px;
 }
-.movie-card__delete-btn{
+.movie-card__delete-btn {
   width: 16px;
   height: 16px;
+  background: none;
 }
 @media (max-width: 910px) {
   .movie-card {
     width: 100%;
     max-width: 389px;
     height: 257px;
+  }
+  .movie-card__image {
+    height: 191px;
+  }
+}
+@media (max-width: 580px) {
+  .movie-card {
+    width: 100%;
+    max-width: 400px;
+    height: 235px;
+  }
+  .movie-card__image {
+    height: 168px;
   }
 }

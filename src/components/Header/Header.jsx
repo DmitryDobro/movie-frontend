@@ -20,16 +20,20 @@ function Header({isLoggin, color, isOpen, onMobileMenu}) {
           <Link to='/profile' className='btn header__profile-btn'>
             Аккаунт
           </Link>
+          <div className={`header__burger ${isOpen && 'header__burger_type_active'}`} id='burgerHeader' onClick={onMobileMenu}>
+            <span></span>
+          </div>
         </>
       ) : (
         <div className='header__links'>
-          <Link to='/signup' className='btn header__link-signup'>Регистрация</Link>
-          <Link to='/signin' className='btn header__link-signin'>Войти</Link>
+          <Link to='/signup' className='btn header__link-signup'>
+            Регистрация
+          </Link>
+          <Link to='/signin' className='btn header__link-signin'>
+            Войти
+          </Link>
         </div>
       )}
-      <div className={`header__burger ${isOpen && 'header__burger_type_active'}`} id='burgerHeader' onClick={onMobileMenu}>
-        <span></span>
-      </div>
     </header>
   );
 }
