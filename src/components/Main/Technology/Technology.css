@@ -113,6 +113,7 @@
 
 @media (max-width: 320px) {
   .technology__list {
+    padding: 0 53px;
     justify-content: start;
   }
 }
