@@ -12,6 +12,8 @@
 /* ------------------------------------------------------ */
 @import url('./components/Movies/MovieCard/MovieCard.css');
 @import url('./components/Movies/MovieList/MovieList.css');
+@import url('./components/SavedMovie/SavedMovie.css');
+@import url('./components/Movies/Movies.css');
 /* ----------------------------------------------- */
 @import url('./components/SearchFrom/SearchFrom.css');
 @import url('./components/Tumb/Tumb.css');
@@ -24,3 +26,4 @@
 /* ----------------------------------------- */
 @import url('./components/NotFound/NotFound.css');
 @import url('./components/Footer/Footer.css');
+@import url('./components/Preloader/Preloader.css');

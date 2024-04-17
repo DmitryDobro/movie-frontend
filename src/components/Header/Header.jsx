@@ -1,7 +1,6 @@
 import logo from '../../img/logo.svg';
 import {Link} from 'react-router-dom';
 function Header({isLoggin, color, isOpen, onMobileMenu}) {
-  console.log(isLoggin);
   return (
     <header className={`header ${color && 'header_color_' + color}`}>
       <Link className='header__logo' to='/'>
