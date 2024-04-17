@@ -25,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-console.log("front work!!")
+console.log("front worked")
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
     checkToken();
@@ -89,8 +89,10 @@ console.log("front work!!")
       .register(name, password, email)
       .then(res => {
         console.log(res);
-        navigate('/');
         setIsLoggin(true);
+        localStorage.setItem('jwt', res.token);
+        localStorage.setItem('isLoggin', true);
+        navigate('/movies');
       })
       .catch(err => {
         console.log(err);
@@ -107,7 +109,7 @@ console.log("front work!!")
         localStorage.setItem('jwt', res.token);
         localStorage.setItem('isLoggin', true);
         setIsLoggin(true);
-        navigate('/');
+        navigate('/movies');
       })
       .catch(err => {
         console.log(err);
@@ -126,8 +128,6 @@ console.log("front work!!")
     localStorage.removeItem('jwt');
     localStorage.removeItem('paramSearchSavedFilm');
     localStorage.removeItem('findMoviesLS');
-    localStorage.removeItem('allFilteredMovies');
-    localStorage.removeItem('findSavedMoviesLS');
     localStorage.removeItem('paramSearch');
     localStorage.removeItem('savedMovies');
     localStorage.setItem('isLoggin', false);
