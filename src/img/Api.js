@@ -3,7 +3,7 @@ class Api {
   constructor(config) {
     this._url = config.url;
     this._headers = config.headers;
-    this._authorization = this._headers['authorization'];
+    // this._authorization = this._headers['authorization'];
   }
   _getResonce(res) {
     if (res.ok) {
@@ -16,6 +16,7 @@ class Api {
     return fetch(`${this._url}/cards`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: data.name,
         link: data.link,
@@ -25,6 +26,7 @@ class Api {
 
   getCards() {
     return fetch(`${this._url}/cards`, {
+      credentials: 'include',
       headers: this._headers,
     }).then(this._getResonce);
   }
@@ -32,6 +34,7 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers,
     }).then(this._getResonce);
   }
@@ -39,6 +42,7 @@ class Api {
   addLike(cardId) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'PUT',
+      credentials: 'include',
       headers: this._headers,
     }).then(this._getResonce);
   }
@@ -46,12 +50,14 @@ class Api {
   deleteLike(cardId) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: 'DELETE',
+      credentials: 'include',
       headers: this._headers,
     }).then(this._getResonce);
   }
 
   getUserInfo() {
     return fetch(`${this._url}/users/me`, {
+      credentials: 'include',
       headers: this._headers,
     }).then(this._getResonce);
   }
@@ -60,6 +66,7 @@ class Api {
     return fetch(`${this._url}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -72,6 +79,7 @@ class Api {
     return fetch(`${this._url}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         avatar: data.link,
       }),
@@ -82,11 +90,13 @@ class Api {
     if (isLiked) {
       return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'DELETE',
+        credentials: 'include',
         headers: this._headers,
       }).then(this._getResonce);
     } else {
       return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'PUT',
+        credentials: 'include',
         headers: this._headers,
       }).then(this._getResonce);
     }

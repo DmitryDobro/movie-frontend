@@ -1,6 +1,6 @@
 class MainApi {
   constructor() {
-    this._url = 'http://localhost:3001';
+    this._url = 'http://api.bitfilmsdb.nomoredomainswork.ru/';
   }
   _getResonce(res) {
     if (res.ok) {

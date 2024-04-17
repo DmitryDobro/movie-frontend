@@ -25,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-
+console.log("front work!!")
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
     checkToken();
