@@ -5,7 +5,8 @@ class MovieApi {
       return res.json();
     }
     return Promise.reject(new Error('Ошибка!'));
-  }
+  } 
+  
   getMovies() {
     return fetch(`https://api.nomoreparties.co/beatfilm-movies`, {
       method: 'GET',
