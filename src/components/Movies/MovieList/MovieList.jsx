@@ -20,7 +20,7 @@ function MovieList({movieData, onLikeMovie, savedMovies, onDeleteMovie}) {
       return movieData.slice(0, number + addMore);
     }
   }, [movieData, widthWindow, addMore]);
-  console.log(moviesTorender);
+  // console.log(moviesTorender);
   return (
     <section className='movies'>
       <div className='movies__card-list'>

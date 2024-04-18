@@ -2,7 +2,7 @@ import iconSearch from '../../img/iconSearch.svg';
 import Tumb from '../Tumb/Tumb';
 import {useState} from 'react';
 import React from 'react';
-function SearchForm({onFilterMovie, param}) {
+function SearchForm({onFilterMovie, param, setIsLoading}) {
   const [searchValueParams, setSearchValueParams] = useState({
     text: '',
     checkedShortFilm: false,
@@ -28,11 +28,12 @@ function SearchForm({onFilterMovie, param}) {
     });
   };
 
-
   function onSubmitFilter(evt) {
     evt.preventDefault();
+    setIsLoading(true);
     if (!searchValueText) {
       setErrText('Введите ключевое слово');
+      setIsLoading(false);
     } else {
       onFilterMovie({
         ...searchValueParams,
@@ -40,6 +41,7 @@ function SearchForm({onFilterMovie, param}) {
         checkedShortFilm: checkedShortFilm,
       });
       setErrText('');
+      setIsLoading(false);
     }
   }
   return (

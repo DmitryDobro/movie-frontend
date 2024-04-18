@@ -3,7 +3,8 @@ import MovieList from './MovieList/MovieList.jsx';
 import SearchFrom from '../SearchFrom/SearchForm.jsx';
 import Footer from '../Footer/Footer.jsx';
 import React from 'react';
-function Movies({onMobileMenu, isOpen, isLoggin, onLikeMovie, savedMovies, onDeleteMovie, movies}) {
+import Preloader from '../Preloader/Preloader.jsx';
+function Movies({onMobileMenu, isOpen, isLoggin, onLikeMovie, savedMovies, onDeleteMovie, movies, isLoading, setIsLoading}) {
   const colorHeader = 'white';
   const [filterMovie, setFilterMovie] = React.useState([]);
   const [paramSearch, setParamSearch] = React.useState({});
@@ -36,8 +37,10 @@ function Movies({onMobileMenu, isOpen, isLoggin, onLikeMovie, savedMovies, onDel
   return (
     <>
       <Header color={colorHeader} onMobileMenu={onMobileMenu} isOpen={isOpen} isLoggin={isLoggin} />
-      <SearchFrom onFilterMovie={handleFilteredMovie} param={paramSearch} />
-      {filterMovie.length ? (
+      <SearchFrom onFilterMovie={handleFilteredMovie} param={paramSearch} setIsLoading={setIsLoading} />
+      {isLoading ? (
+        <Preloader />
+      ) : filterMovie.length ? (
         <MovieList movieData={filterMovie} onLikeMovie={onLikeMovie} savedMovies={savedMovies} onDeleteMovie={onDeleteMovie} />
       ) : paramSearch.text ? (
         <p className='saved__notFound'>Ничего не нашли</p>

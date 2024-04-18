@@ -96,9 +96,18 @@ function App() {
   };
   function handleMovieDelete(id) {
     // console.log(id);
+    const findSavedFilm = JSON.parse(localStorage.getItem('findSavedFilm'));
     api.deleteMovie(id).then(() => {
       setSavedMovies(savedMovies.filter(currentMovie => currentMovie._id !== id));
     });
+    const updatedSavedMovies = savedMovies.filter(movie => movie._id !== id);
+    console.log(id);
+    setSavedMovies(updatedSavedMovies);
+    if (findSavedFilm) {
+      const newFindSavedFilm = findSavedFilm.filter(movie => movie._id !== id);
+
+      localStorage.setItem('findSavedFilm', JSON.stringify(newFindSavedFilm));
+    }
   }
 
   // =======Авторизация, регистрация, выход=============================================
@@ -108,7 +117,7 @@ function App() {
       .register(name, password, email)
       .then(() => {
         handleLogin(email, password);
-        onRegisterSuccess("Все прошло успешно");
+        onRegisterSuccess('Все прошло успешно');
         navigate('/movies');
       })
       .catch(err => {
@@ -127,7 +136,7 @@ function App() {
         localStorage.setItem('jwt', res.token);
         localStorage.setItem('isLoggin', true);
         setIsLoggin(true);
-        onRegisterSuccess("Все прошло успешно");
+        onRegisterSuccess('Все прошло успешно');
         navigate('/movies');
       })
       .catch(err => {
