@@ -16,6 +16,8 @@ import MobileMenu from './MobileMenu/MobileMenu.jsx';
 import {CurrentUserContext} from '../context/CurrentUserContext.js';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute.jsx';
 import Preloader from './Preloader/Preloader.jsx';
+import InfoTooltip from './InfoTooltip/InfoTooltip.jsx';
+
 function App() {
   const LoggedInFromLlocalStorage = JSON.parse(localStorage.getItem('isLoggin'));
   const [savedMovies, setSavedMovies] = React.useState([]);
@@ -25,6 +27,11 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
+
+  // состояния для модального окна с успешной/неуспешной регистрацией
+  const [isOpenInfoTooltipPopup, setOpenIsInfoTooltipPopup] = React.useState(false);
+  const [tooltipNoticeText, setTooltipNoticeText] = React.useState('');
+  const [tooltipIcon, setTooltipIcon] = React.useState('');
   // console.log('front worked');
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
@@ -58,7 +65,20 @@ function App() {
       })
       .catch(err => console.log(err));
   }
-
+  // ======================================================
+  function onRegisterSuccess(text) {
+    setTooltipNoticeText(text);
+    setTooltipIcon('success');
+    setOpenIsInfoTooltipPopup(true);
+  }
+  function onRegisterError() {
+    setTooltipNoticeText('Что-то пошло не так! Попробуйте еще раз.');
+    setTooltipIcon('error');
+    setOpenIsInfoTooltipPopup(true);
+  }
+  function closePopups() {
+    setOpenIsInfoTooltipPopup(false);
+  }
   // =======Поставка и снятие лайка===============================================
   const handleLikeMovie = (movie, isLiked, savedMovie) => {
     if (isLiked) {
@@ -88,9 +108,11 @@ function App() {
       .register(name, password, email)
       .then(() => {
         handleLogin(email, password);
+        onRegisterSuccess("Все прошло успешно");
         navigate('/movies');
       })
       .catch(err => {
+        onRegisterError();
         console.log(err);
       })
       .finally(setIsLoading(false));
@@ -105,9 +127,11 @@ function App() {
         localStorage.setItem('jwt', res.token);
         localStorage.setItem('isLoggin', true);
         setIsLoggin(true);
+        onRegisterSuccess("Все прошло успешно");
         navigate('/movies');
       })
       .catch(err => {
+        onRegisterError();
         console.log(err);
       })
       .finally(setIsLoading(false));
@@ -212,6 +236,12 @@ function App() {
               <Route path='*' element={<NotFound />} />
             </Routes>
             <MobileMenu isOpen={isOpenMobileMenu}></MobileMenu>
+            <InfoTooltip
+              noticeText={tooltipNoticeText}
+              tooltipIcon={tooltipIcon}
+              isOpen={isOpenInfoTooltipPopup}
+              onclosePopup={closePopups}
+            />
           </div>
         </CurrentUserContext.Provider>
       )}
