@@ -25,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-console.log("front worked")
+  console.log('front worked');
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
     checkToken();
@@ -33,7 +33,7 @@ console.log("front worked")
   React.useEffect(() => {
     if (isLoggin) {
       setIsLoading(true);
-      console.log(123)
+      console.log(123);
       Promise.all([api.getUserInfo(), api.getSavedMovies(), movieApi.getMovies()])
         .then(([userData, saveMoviesData, moviesData]) => {
           setCurrentUser(userData);
@@ -44,11 +44,11 @@ console.log("front worked")
         .finally(setIsLoading(false));
     }
   }, [isLoggin]);
-// управлением состоянием открытия\закрытия мобильного меню
+  // управлением состоянием открытия\закрытия мобильного меню
   const handleMobileMenu = () => {
     setIsOpenMobileMenu(!isOpenMobileMenu);
   };
-// ==================================================
+  // ==================================================
   function handleUpdateUser(data) {
     console.log(data);
     api
@@ -87,11 +87,8 @@ console.log("front worked")
     setIsLoading(true);
     authApi
       .register(name, password, email)
-      .then(res => {
-        console.log(res);
-        setIsLoggin(true);
-        localStorage.setItem('jwt', res.token);
-        localStorage.setItem('isLoggin', true);
+      .then(() => {
+        handleLogin(email, password);
         navigate('/movies');
       })
       .catch(err => {
