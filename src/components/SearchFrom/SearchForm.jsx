@@ -17,7 +17,6 @@ function SearchForm({onFilterMovie, param}) {
     }
   }, [param]);
   const handleChangeText = evt => {
-    console.log(evt.target.value);
     setSearchValueText(evt.target.value);
   };
   const handleChangeCheckbox = evt => {
@@ -32,7 +31,6 @@ function SearchForm({onFilterMovie, param}) {
 
   function onSubmitFilter(evt) {
     evt.preventDefault();
-    console.log(checkedShortFilm);
     if (!searchValueText) {
       setErrText('Введите ключевое слово');
     } else {

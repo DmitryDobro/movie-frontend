@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes, useNavigate} from 'react-router-dom';
+import {Route, Routes, useNavigate, Navigate} from 'react-router-dom';
 // апи
 import {api} from '../utils/MainApi.js';
 import {authApi} from '../utils/auth.js';
@@ -25,7 +25,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [movies, setMovies] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-  console.log('front worked');
+  // console.log('front worked');
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
     checkToken();
@@ -54,7 +54,6 @@ function App() {
     api
       .uppdateUser(data)
       .then(res => {
-        console.log(data);
         setCurrentUser(res);
       })
       .catch(err => console.log(err));
@@ -76,7 +75,7 @@ function App() {
     }
   };
   function handleMovieDelete(id) {
-    console.log(id);
+    // console.log(id);
     api.deleteMovie(id).then(() => {
       setSavedMovies(savedMovies.filter(currentMovie => currentMovie._id !== id));
     });
@@ -142,17 +141,27 @@ function App() {
               <Route path='/' element={<Landing onMobileMenu={handleMobileMenu} isOpen={isOpenMobileMenu} isLoggin={isLoggin} />} />
               <Route
                 path='/signin'
-                element={<Login onMobileMenu={handleMobileMenu} isOpen={isOpenMobileMenu} isLoggin={isLoggin} onLogin={handleLogin} />}
+                element={
+                  isLoggin ? (
+                    <Navigate to='/' replace />
+                  ) : (
+                    <Login onMobileMenu={handleMobileMenu} isOpen={isOpenMobileMenu} isLoggin={isLoggin} onLogin={handleLogin} />
+                  )
+                }
               />
               <Route
                 path='/signup'
                 element={
-                  <Registration
-                    onMobileMenu={handleMobileMenu}
-                    isOpen={isOpenMobileMenu}
-                    isLoggin={isLoggin}
-                    onRegister={hanleRegistration}
-                  />
+                  isLoggin ? (
+                    <Navigate to='/' replace />
+                  ) : (
+                    <Registration
+                      onMobileMenu={handleMobileMenu}
+                      isOpen={isOpenMobileMenu}
+                      isLoggin={isLoggin}
+                      onRegister={hanleRegistration}
+                    />
+                  )
                 }
               />
               <Route
