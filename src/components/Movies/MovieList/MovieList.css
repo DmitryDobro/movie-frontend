@@ -21,7 +21,7 @@
   line-height: 15px;
   letter-spacing: 0px;
 }
-@media (max-width: 909px) {
+@media (max-width: 910px) {
   .movies {
     padding: 80px 30px;
   }

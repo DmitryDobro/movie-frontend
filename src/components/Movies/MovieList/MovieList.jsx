@@ -1,26 +1,43 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
+
+import {
+  MOVIE_NUMBER_LARGE,
+  MOVIE_NUMBER_SMALL,
+  WIDTH_WINOW_SMALL,
+  WIDTH_WINOW_MEDIUM,
+  ADD_MOVIE_SMALL,
+  ADD_MOVIE_MEDIUM,
+} from '../../../utils/constats';
+
 function MovieList({movieData, onLikeMovie, savedMovies, onDeleteMovie}) {
-  const [widthWindow, setWidthWindow] = React.useState(0);
+  const [widthWindow, setWidthWindow] = React.useState(window.innerWidth);
   const [addMore, setAddMore] = React.useState(0);
-  // получаем ширину экрана
-  React.useEffect(() => {
-    getSize();
-  }, []);
-  const getSize = () => {
+  // обнуляем количество добавленных фильмов через кнопку
+  // чтобы каждый раз при изменение ширины окна добавлять фиксированное количество фильмов
+  const getSizeAndReset = () => {
+    console.log('work');
     setWidthWindow(window.innerWidth);
+    setAddMore(0);
   };
-  window.addEventListener('resize', getSize);
+  function debounce(callee, timeoutMs) {
+    return function perform() {
+      let previousCall = this.lastCall;
+      this.lastCall = Date.now();
+      if (previousCall && this.lastCall - previousCall <= timeoutMs) {
+        clearTimeout(this.lastCallTimer);
+      }
+      this.lastCallTimer = setTimeout(() => callee(), timeoutMs);
+    };
+  }
+  const debouncedHandle = debounce(getSizeAndReset, 250);
+  window.addEventListener('resize', debouncedHandle);
   // определяем сколько карточек надо показывать максимум на основании ширины окна и записываем это число в number
   const moviesTorender = React.useMemo(() => {
-    const number = widthWindow < 480 ? 5 : 16;
-    if (widthWindow == 910) {
-      return movieData.slice(0, 12 + addMore);
-    } else {
-      return movieData.slice(0, number + addMore);
-    }
+    const number = widthWindow < WIDTH_WINOW_SMALL ? MOVIE_NUMBER_SMALL : MOVIE_NUMBER_LARGE;
+    return movieData.slice(0, number + addMore);
   }, [movieData, widthWindow, addMore]);
-  // console.log(moviesTorender);
+  console.log(moviesTorender);
   return (
     <section className='movies'>
       <div className='movies__card-list'>
@@ -42,7 +59,7 @@ function MovieList({movieData, onLikeMovie, savedMovies, onDeleteMovie}) {
           className=' btn movies__more-btn'
           type='button'
           onClick={() => {
-            setAddMore(addMore => addMore + (widthWindow < 910 ? 2 : 4));
+            setAddMore(addMore => addMore + (widthWindow < WIDTH_WINOW_MEDIUM ? ADD_MOVIE_SMALL : ADD_MOVIE_MEDIUM));
           }}>
           Ещё
         </button>

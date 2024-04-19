@@ -32,7 +32,6 @@ function App() {
   const [isOpenInfoTooltipPopup, setOpenIsInfoTooltipPopup] = React.useState(false);
   const [tooltipNoticeText, setTooltipNoticeText] = React.useState('');
   const [tooltipIcon, setTooltipIcon] = React.useState('');
-  // console.log('front worked');
   // получаем информацию с сервера о фильмах и пользователе
   React.useEffect(() => {
     checkToken();
@@ -95,17 +94,14 @@ function App() {
     }
   };
   function handleMovieDelete(id) {
-    // console.log(id);
     const findSavedFilm = JSON.parse(localStorage.getItem('findSavedFilm'));
     api.deleteMovie(id).then(() => {
       setSavedMovies(savedMovies.filter(currentMovie => currentMovie._id !== id));
     });
     const updatedSavedMovies = savedMovies.filter(movie => movie._id !== id);
-    console.log(id);
     setSavedMovies(updatedSavedMovies);
     if (findSavedFilm) {
       const newFindSavedFilm = findSavedFilm.filter(movie => movie._id !== id);
-
       localStorage.setItem('findSavedFilm', JSON.stringify(newFindSavedFilm));
     }
   }
@@ -146,6 +142,7 @@ function App() {
       .finally(setIsLoading(false));
   };
   function checkToken() {
+    setIsLoading(true);
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
       setIsLoggin(true);

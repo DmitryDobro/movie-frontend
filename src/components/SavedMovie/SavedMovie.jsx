@@ -4,13 +4,15 @@ import SearchFrom from '../SearchFrom/SearchForm.jsx';
 import Footer from '../Footer/Footer.jsx';
 import React from 'react';
 import Preloader from '../Preloader/Preloader.jsx';
-function SavedMovie({onMobileMenu, isOpen, isLoggin, savedMovies, onDeleteMovie, isLoading, setIsLoading}) {
+function SavedMovie({onMobileMenu, isOpen, isLoggin, savedMovies, onDeleteMovie}) {
   const colorHeader = 'white';
   const [filterMovie, setFilterMovie] = React.useState([]);
   const [paramSearch, setParamSearch] = React.useState({});
   const findSavedFilm = JSON.parse(localStorage.getItem('findSavedFilm'));
+  const [isLoadingMovie, setIsLoadingMovie] = React.useState(false);
+  const movie = true;
   React.useEffect(() => {
-    if (findSavedFilm) {
+    if (findSavedFilm.length) {
       console.log(findSavedFilm);
       setFilterMovie(findSavedFilm);
     } else {
@@ -35,9 +37,9 @@ function SavedMovie({onMobileMenu, isOpen, isLoggin, savedMovies, onDeleteMovie,
   return (
     <>
       <Header color={colorHeader} onMobileMenu={onMobileMenu} isOpen={isOpen} isLoggin={isLoggin} />
-      <SearchFrom onFilterMovie={handleFilteredMovie} param={paramSearch} setIsLoading={setIsLoading} />
-      {isLoading ? (
-        <Preloader />
+      <SearchFrom onFilterMovie={handleFilteredMovie} param={paramSearch} setIsLoadingMovie={setIsLoadingMovie} />
+      {isLoadingMovie ? (
+        <Preloader movie={movie} />
       ) : filterMovie.length ? (
         <MovieList movieData={filterMovie} savedMovies={savedMovies} img={savedMovies.img} onDeleteMovie={onDeleteMovie} />
       ) : (
