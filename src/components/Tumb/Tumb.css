@@ -1,0 +1,55 @@
+.tumb {
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  height: 20px;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  margin: 0;
+  border-radius: 20px;
+  background-color: rgb(43, 224, 128);
+  cursor: pointer;
+}
+.switch.off {
+  background-color: rgb(235, 235, 235);
+}
+.slider {
+  position: absolute;
+  top: 2.2px;
+  left: 3px;
+  right: 18px;
+  bottom: 3px;
+  border-radius: 50%;
+  transform: translateX(0px);
+  transition: transform 0.5s;
+  background-color: rgb(245, 245, 245);
+}
+
+.switch.on .slider {
+  position: absolute;
+  border-radius: 50%;
+  top: 2.2px;
+  left: -3px;
+  right: 24px;
+  bottom: 3px;
+  animation: translateXforward 0.5s;
+  transform: translateX(20px);
+  background-color: rgb(255, 255, 255);
+}
+@keyframes translateXforward {
+  from {
+    transform: translateX(6px);
+  }
+  to {
+    transform: translateX(20px);
+  }
+}

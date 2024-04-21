@@ -1,0 +1,12 @@
+<svg width="38.000000" height="38.000000" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs/>
+	<g opacity="0.000000">
+		<rect id="guard" width="38.000000" height="38.000000" fill="#FFFFFF" fill-opacity="1.000000"/>
+	</g>
+	<path id="logo__COLOR:main-1" d="M0 12.66C0 8.23 0 6.01 0.86 4.32C1.62 2.83 2.83 1.62 4.32 0.86C6.01 0 8.23 0 12.66 0L25.33 0C29.76 0 31.98 0 33.67 0.86C35.16 1.62 36.37 2.83 37.13 4.32C38 6.01 38 8.23 38 12.66L38 25.33C38 29.76 38 31.98 37.13 33.67C36.37 35.16 35.16 36.37 33.67 37.13C31.98 38 29.76 38 25.33 38L12.66 38C8.23 38 6.01 38 4.32 37.13C2.83 36.37 1.62 35.16 0.86 33.67C0 31.98 0 29.76 0 25.33L0 12.66Z" fill="#2BE080" fill-opacity="1.000000" fill-rule="nonzero"/>
+	<circle id="logo__COLOR:logo-2" cx="19.000000" cy="19.000000" r="11.000000" fill="#FFFFFF" fill-opacity="1.000000"/>
+	<path id="logo__COLOR:main-1" d="M15.15 19C15.15 21.12 16.87 22.84 19 22.84C21.12 22.84 22.84 21.12 22.84 19L25 19C25 22.31 22.31 25 19 25C15.68 25 13 22.31 13 19L15.15 19Z" fill="#2BE080" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>

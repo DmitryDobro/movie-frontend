@@ -1,0 +1,106 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 270px;
+  min-height: 218px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 16px 24px 0px rgba(0, 0, 0, 0.05);
+  background: rgb(253, 253, 253);
+}
+.movie-card__image {
+  width: 100%;
+  height: 151px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.movie-card__content {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 12px;
+}
+.movie-card__info {
+  max-width: 100px;
+}
+.movie-card__name {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.movie-card__duration {
+  color: rgb(160, 160, 160);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13px;
+  letter-spacing: 0px;
+}
+.movie-card__like-btn {
+  background-color: rgb(255, 255, 255);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.movie-card__like-btn::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 50%;
+  margin: 0px 0px 0px 1px;
+}
+.movie-card__like-btn_type_active::before {
+  content: '';
+  width: 11px;
+  height: 11px;
+  background-color: rgb(43, 224, 128);
+  border-radius: 50%;
+  margin: 0px 0px 0px 1px;
+}
+.movie-card__delete-btn {
+  width: 16px;
+  height: 16px;
+  background: none;
+}
+@media (max-width: 910px) {
+  .movie-card {
+    width: 100%;
+    max-width: 389px;
+    height: 257px;
+  }
+  .movie-card__image {
+    height: 191px;
+  }
+  .movie-card__info{
+    max-width: 250px;
+  }
+}
+@media (max-width: 650px){
+  .movie-card__info{
+    max-width: 180px;
+  }
+}
+@media (max-width: 580px) {
+  .movie-card {
+    width: 100%;
+    max-width: 400px;
+    height: 235px;
+  }
+  .movie-card__image {
+    height: 168px;
+  }
+}
+@media (max-width: 480px){
+  .movie-card__info{
+    max-width: 90%;
+  }
+}

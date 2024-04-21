@@ -1,0 +1,30 @@
+@import url('./vendor/normalize.css');
+@import url('./vendor/fonts/fonts.css');
+@import url('./components/wrapper/wrapper.css');
+
+@import url('./components/Header/Header.css');
+/* ------------------------------------------- */
+@import url('./components/Main/Promo/Promo.css');
+@import url('./components/Main/NavTab/Navtab.css');
+@import url('./components/Main/AboutProject/AboutProject.css');
+@import url('./components/Main/Technology/Technology.css');
+@import url('./components/Main/AboutStudent/AboutStudent.css');
+/* ------------------------------------------------------ */
+@import url('./components/Movies/MovieCard/MovieCard.css');
+@import url('./components/Movies/MovieList/MovieList.css');
+@import url('./components/SavedMovie/SavedMovie.css');
+@import url('./components/Movies/Movies.css');
+/* ----------------------------------------------- */
+@import url('./components/SearchFrom/SearchFrom.css');
+@import url('./components/Tumb/Tumb.css');
+/* ---------------------------------------------------- */
+@import url('./components/Registration/Registration.css');
+@import url('./components/Login/Login.css');
+@import url('./components/Profile/Profile.css');
+/* ---------------------------------------------------- */
+@import url('./components/MobileMenu/MobileMenu.css');
+/* ----------------------------------------- */
+@import url('./components/NotFound/NotFound.css');
+@import url('./components/Footer/Footer.css');
+@import url('./components/Preloader/Preloader.css');
+@import url('./components/InfoTooltip/InfoTooltip.css');

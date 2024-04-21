@@ -1,0 +1,193 @@
+.aboutStudent {
+  padding: 110px 70px 125px;
+}
+.aboutStudent__title {
+  padding: 0 0 24px;
+  margin: 0 0 66px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  position: relative;
+}
+.aboutStudent__title::before {
+  content: '';
+  position: absolute;
+  background-color: rgb(15, 1, 1);
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+}
+.aboutStudent__info {
+  margin: 0 0 100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 0 40px;
+}
+.aboutStudent__text {
+}
+.aboutStudent__name {
+  margin: 0 0 18px;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -4%;
+}
+.aboutStudent__job {
+  margin: 0 0 26px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+.aboutStudent__description {
+  max-width: 600px;
+  margin: 0 0 99px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+}
+.aboutStudent__link {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: 0%;
+  text-decoration: none;
+}
+
+.aboutStudent__portfolio-subtitle {
+  margin: 0 0 50px;
+  color: rgb(160, 160, 160);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+}
+.aboutStudent__portfolio-site {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  padding: 0 0 19px;
+}
+.aboutStudent__portfolio-site:last-child {
+  margin-bottom: 0;
+}
+.aboutStudent__portfolio-link-name {
+}
+.aboutStudent__portfolio-link-name::before {
+  content: '';
+  position: absolute;
+  background-color: rgb(232, 232, 232);
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+}
+.aboutStudent__portfolio-icon {
+  position: absolute;
+  right: 0;
+  width: 18px;
+  height: 28px;
+}
+
+@media (max-width: 770px) {
+  .aboutStudent {
+    padding: 90px 50px;
+  }
+  .aboutStudent__title {
+  }
+  .aboutStudent__name {
+    margin: 0 0 16px;
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .aboutStudent__job {
+    margin: 0 0 20px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .aboutStudent__description {
+    margin: 0 0 87px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .aboutStudent__photo {
+    height: 307px;
+    max-width: 250px;
+  }
+}
+@media (max-width: 710px) {
+  .aboutStudent__info {
+    margin: 0 0 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutStudent__name {
+    text-align: center;
+  }
+  .aboutStudent__job {
+    text-align: center;
+  }
+  .aboutStudent__photo {
+    margin: 0 0 40px;
+    height: 352px;
+    max-width: 292px;
+  }
+}
+@media (max-width: 560px) {
+  .aboutStudent__portfolio-site {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+@media (max-width: 430px) {
+  .aboutStudent {
+    padding: 70px 14px;
+  }
+  .aboutStudent__title {
+    padding: 0 0 28px;
+    margin: 0 0 60px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .aboutStudent__name {
+    margin: 0 0 20px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+  .aboutStudent__job {
+    margin: 0 0 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .aboutStudent__description {
+    margin: 0 0 40px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .aboutStudent__link {
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+  }
+  .aboutStudent__portfolio-subtitle {
+    margin: 0 0 40px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .aboutStudent__portfolio-site {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
